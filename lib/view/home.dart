@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mymath/components/float_button.dart';
 import 'package:mymath/components/grid_button.dart';
+import 'package:mymath/components/mycrousel.dart';
 import 'package:mymath/view/profile_page.dart';
 
 class MyHome extends StatefulWidget {
@@ -144,6 +145,11 @@ class _MyHomeState extends State<MyHome> {
               ),
             ],
           ),
+          //carousel slider are here😁
+          const SizedBox(
+            height: 10,
+          ),
+          const MyCarousel(),
 
           //gird are here😊
           const Padding(padding: EdgeInsets.all(25), child: MyGridView()),
