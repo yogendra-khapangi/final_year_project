@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mymath/components/float_button.dart';
 
 class MyHome extends StatefulWidget {
   const MyHome({super.key});
@@ -18,136 +19,138 @@ class _MyHomeState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          // backgroundColor: const Color.fromARGB(255, 70, 74, 130),
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-        ),
-        body: SingleChildScrollView(
-          child: Column(children: [
-            Stack(
-              children: [
-                Container(
-                  height: 200,
-                  width: MediaQuery.of(context).size.width,
-                  decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(35),
-                        bottomRight: Radius.circular(35),
-                      ),
-                      gradient:
-                          LinearGradient(colors: [Colors.blue, Colors.indigo])),
-                  child: Column(children: [
-                    Container(
-                      height: 50,
-                      width: MediaQuery.of(context).size.width,
-                      color: Colors.red,
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        // backgroundColor: const Color.fromARGB(255, 70, 74, 130),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
+      body: SingleChildScrollView(
+        child: Column(children: [
+          Stack(
+            children: [
+              Container(
+                height: 200,
+                width: MediaQuery.of(context).size.width,
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(35),
+                      bottomRight: Radius.circular(35),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(25, 70, 0, 25),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 50,
-                            width: MediaQuery.of(context).size.width * .7,
-                            // color: Colors.yellow,
-                            child: const TextField(
-                              decoration: InputDecoration(
-                                  filled: true,
-                                  fillColor: Colors.white,
-                                  prefixIcon: Icon(Icons.search),
-                                  border: InputBorder.none,
-                                  hintText: "Search Questions"),
-                            ),
+                    gradient:
+                        LinearGradient(colors: [Colors.blue, Colors.indigo])),
+                child: Column(children: [
+                  Container(
+                    height: 50,
+                    width: MediaQuery.of(context).size.width,
+                    color: Colors.red,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(25, 70, 0, 25),
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 50,
+                          width: MediaQuery.of(context).size.width * .7,
+                          // color: Colors.yellow,
+                          child: const TextField(
+                            decoration: InputDecoration(
+                                filled: true,
+                                fillColor: Colors.white,
+                                prefixIcon: Icon(Icons.search),
+                                border: InputBorder.none,
+                                hintText: "Search Questions"),
                           ),
-                          Container(
-                            // padding: const EdgeInsets.only(left: 3),
-                            margin: const EdgeInsets.only(left: 10),
-                            height: 50,
-                            width: MediaQuery.of(context).size.width * .14,
-                            color: Colors.green,
-                          ),
-                        ],
-                      ),
-                    )
-                  ]),
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.all(25),
-              child: GridView.count(
-                  padding: EdgeInsets.zero, // set padding to zero
-                  physics: const NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  crossAxisCount: 4,
-                  children: const [
-                    Card(
-                      child: Center(
-                        child: Text("hello"),
-                      ),
+                        ),
+                        Container(
+                          // padding: const EdgeInsets.only(left: 3),
+                          margin: const EdgeInsets.only(left: 10),
+                          height: 50,
+                          width: MediaQuery.of(context).size.width * .14,
+                          color: Colors.green,
+                        ),
+                      ],
                     ),
-                    Card(
-                      child: Center(
-                        child: Text("hello"),
-                      ),
+                  )
+                ]),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(25),
+            child: GridView.count(
+                padding: EdgeInsets.zero, // set padding to zero
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                crossAxisCount: 4,
+                children: const [
+                  Card(
+                    child: Center(
+                      child: Text("hello"),
                     ),
-                    Card(
-                      child: Center(
-                        child: Text("hello"),
-                      ),
+                  ),
+                  Card(
+                    child: Center(
+                      child: Text("hello"),
                     ),
-                    Card(
-                      child: Center(
-                        child: Text("hello"),
-                      ),
+                  ),
+                  Card(
+                    child: Center(
+                      child: Text("hello"),
                     ),
-                    Card(
-                      child: Center(
-                        child: Text("hello"),
-                      ),
+                  ),
+                  Card(
+                    child: Center(
+                      child: Text("hello"),
                     ),
-                    Card(
-                      child: Center(
-                        child: Text("hello"),
-                      ),
+                  ),
+                  Card(
+                    child: Center(
+                      child: Text("hello"),
                     ),
-                    Card(
-                      child: Center(
-                        child: Text("hello"),
-                      ),
+                  ),
+                  Card(
+                    child: Center(
+                      child: Text("hello"),
                     ),
-                    Card(
-                      child: Center(
-                        child: Text("hello"),
-                      ),
+                  ),
+                  Card(
+                    child: Center(
+                      child: Text("hello"),
                     ),
-                  ]),
-            ),
-            const ListTile(
-              title: Text("Class :"),
-            ),
-            const ListTile(
-              title: Text("Class :"),
-            ),
-            const ListTile(
-              title: Text("Class :"),
-            ),
-            const ListTile(
-              title: Text("Class :"),
-            ),
-            const ListTile(
-              title: Text("Class :"),
-            ),
-            const ListTile(
-              title: Text("Class :"),
-            ),
-            const ListTile(
-              title: Text("Class :"),
-            ),
-          ]),
-        ));
+                  ),
+                  Card(
+                    child: Center(
+                      child: Text("hello"),
+                    ),
+                  ),
+                ]),
+          ),
+          const ListTile(
+            title: Text("Class :"),
+          ),
+          const ListTile(
+            title: Text("Class :"),
+          ),
+          const ListTile(
+            title: Text("Class :"),
+          ),
+          const ListTile(
+            title: Text("Class :"),
+          ),
+          const ListTile(
+            title: Text("Class :"),
+          ),
+          const ListTile(
+            title: Text("Class :"),
+          ),
+          const ListTile(
+            title: Text("Class :"),
+          ),
+        ]),
+      ),
+      floatingActionButton: const MyFloatingActionButton(),
+    );
   }
 }
 
@@ -229,15 +232,7 @@ class _MyHomeState extends State<MyHome> {
 //           colors: [Colors.blue, Colors.indigo],
 //         ),
 //       ),
-//       floatingActionButton: FloatingActionButton(
-//           foregroundColor: Colors.white,
-//           backgroundColor: Colors.indigo,
-//           focusColor: Colors.indigo,
-//           child: const Icon(Icons.add),
-//           onPressed: () {
-//             Navigator.push(context,
-//                 MaterialPageRoute(builder: (context) => const MyProfile()));
-//           }),
+//      
 //     )));
 //   }
 // }
