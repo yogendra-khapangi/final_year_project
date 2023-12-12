@@ -20,8 +20,8 @@ class _MyHomeState extends State<MyHome> {
     return Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 70, 74, 130),
-          // backgroundColor: Colors.transparent,
+          // backgroundColor: const Color.fromARGB(255, 70, 74, 130),
+          backgroundColor: Colors.transparent,
           elevation: 0,
         ),
         body: SingleChildScrollView(
@@ -33,61 +33,98 @@ class _MyHomeState extends State<MyHome> {
                   width: MediaQuery.of(context).size.width,
                   decoration: const BoxDecoration(
                       borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(40),
-                        bottomRight: Radius.circular(40),
+                        bottomLeft: Radius.circular(35),
+                        bottomRight: Radius.circular(35),
                       ),
                       gradient:
                           LinearGradient(colors: [Colors.blue, Colors.indigo])),
-                )
+                  child: Column(children: [
+                    Container(
+                      height: 50,
+                      width: MediaQuery.of(context).size.width,
+                      color: Colors.red,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(25, 70, 0, 25),
+                      child: Row(
+                        children: [
+                          Container(
+                            height: 50,
+                            width: MediaQuery.of(context).size.width * .7,
+                            // color: Colors.yellow,
+                            child: const TextField(
+                              decoration: InputDecoration(
+                                  filled: true,
+                                  fillColor: Colors.white,
+                                  prefixIcon: Icon(Icons.search),
+                                  border: InputBorder.none,
+                                  hintText: "Search Questions"),
+                            ),
+                          ),
+                          Container(
+                            // padding: const EdgeInsets.only(left: 3),
+                            margin: const EdgeInsets.only(left: 10),
+                            height: 50,
+                            width: MediaQuery.of(context).size.width * .14,
+                            color: Colors.green,
+                          ),
+                        ],
+                      ),
+                    )
+                  ]),
+                ),
               ],
             ),
-            GridView.count(
-                padding: EdgeInsets.zero, // set padding to zero
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                crossAxisCount: 4,
-                children: const [
-                  Card(
-                    child: Center(
-                      child: Text("hello"),
+            Padding(
+              padding: const EdgeInsets.all(25),
+              child: GridView.count(
+                  padding: EdgeInsets.zero, // set padding to zero
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  crossAxisCount: 4,
+                  children: const [
+                    Card(
+                      child: Center(
+                        child: Text("hello"),
+                      ),
                     ),
-                  ),
-                  Card(
-                    child: Center(
-                      child: Text("hello"),
+                    Card(
+                      child: Center(
+                        child: Text("hello"),
+                      ),
                     ),
-                  ),
-                  Card(
-                    child: Center(
-                      child: Text("hello"),
+                    Card(
+                      child: Center(
+                        child: Text("hello"),
+                      ),
                     ),
-                  ),
-                  Card(
-                    child: Center(
-                      child: Text("hello"),
+                    Card(
+                      child: Center(
+                        child: Text("hello"),
+                      ),
                     ),
-                  ),
-                  Card(
-                    child: Center(
-                      child: Text("hello"),
+                    Card(
+                      child: Center(
+                        child: Text("hello"),
+                      ),
                     ),
-                  ),
-                  Card(
-                    child: Center(
-                      child: Text("hello"),
+                    Card(
+                      child: Center(
+                        child: Text("hello"),
+                      ),
                     ),
-                  ),
-                  Card(
-                    child: Center(
-                      child: Text("hello"),
+                    Card(
+                      child: Center(
+                        child: Text("hello"),
+                      ),
                     ),
-                  ),
-                  Card(
-                    child: Center(
-                      child: Text("hello"),
+                    Card(
+                      child: Center(
+                        child: Text("hello"),
+                      ),
                     ),
-                  ),
-                ]),
+                  ]),
+            ),
             const ListTile(
               title: Text("Class :"),
             ),
