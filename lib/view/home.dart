@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mymath/components/float_button.dart';
+import 'package:mymath/components/grid_button.dart';
 import 'package:mymath/view/profile_page.dart';
 
 class MyHome extends StatefulWidget {
@@ -39,7 +40,7 @@ class _MyHomeState extends State<MyHome> {
                       bottomRight: Radius.circular(35),
                     ),
                     gradient:
-                        LinearGradient(colors: [Colors.blue, Colors.indigo])),
+                        LinearGradient(colors: [Colors.indigo, Colors.blue])),
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(25, 40, 0, 0),
                   child: Column(children: [
@@ -57,18 +58,27 @@ class _MyHomeState extends State<MyHome> {
                             ),
                             subtitle: Text(
                               "Let's Start Learning",
-                              style: TextStyle(color: Colors.white),
+                              style:
+                                  TextStyle(color: Colors.white, height: .45),
                             ),
                           ),
                         ),
-                        Container(
-                          margin: const EdgeInsets.only(left: 60),
-                          height: 40,
-                          width: MediaQuery.of(context).size.width * .10,
-                          color: Colors.white,
-                          child: const Icon(
-                            Icons.verified_user,
-                            color: Colors.indigo,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const MyProfile()));
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(left: 60),
+                            height: 40,
+                            width: MediaQuery.of(context).size.width * .10,
+                            color: Colors.white,
+                            child: const Icon(
+                              Icons.verified_user,
+                              color: Colors.indigo,
+                            ),
                           ),
                         ),
                         GestureDetector(
@@ -134,56 +144,9 @@ class _MyHomeState extends State<MyHome> {
               ),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(25),
-            child: GridView.count(
-                padding: EdgeInsets.zero, // set padding to zero
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                crossAxisCount: 4,
-                children: const [
-                  Card(
-                    child: Center(
-                      child: Text("hello"),
-                    ),
-                  ),
-                  Card(
-                    child: Center(
-                      child: Text("hello"),
-                    ),
-                  ),
-                  Card(
-                    child: Center(
-                      child: Text("hello"),
-                    ),
-                  ),
-                  Card(
-                    child: Center(
-                      child: Text("hello"),
-                    ),
-                  ),
-                  Card(
-                    child: Center(
-                      child: Text("hello"),
-                    ),
-                  ),
-                  Card(
-                    child: Center(
-                      child: Text("hello"),
-                    ),
-                  ),
-                  Card(
-                    child: Center(
-                      child: Text("hello"),
-                    ),
-                  ),
-                  Card(
-                    child: Center(
-                      child: Text("hello"),
-                    ),
-                  ),
-                ]),
-          ),
+
+          //gird are here😊
+          const Padding(padding: EdgeInsets.all(25), child: MyGridView()),
           const ListTile(
             title: Text("Class :"),
           ),
