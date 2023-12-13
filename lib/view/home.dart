@@ -1,4 +1,6 @@
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:mymath/components/bottomNavigationBar.dart';
 import 'package:mymath/components/float_button.dart';
 import 'package:mymath/components/grid_button.dart';
 import 'package:mymath/components/mycrousel.dart';
@@ -23,106 +25,46 @@ class _MyHomeState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // extendBodyBehindAppBar: true,
-      // appBar: AppBar(
-      //   // backgroundColor: const Color.fromARGB(255, 70, 74, 130),
-      //   backgroundColor: Colors.transparent,
-      //   elevation: 0,
-      // ),
-      body: SingleChildScrollView(
-        child: Column(children: [
-          Stack(
-            children: [
-              Container(
-                height: 200,
-                width: MediaQuery.of(context).size.width,
-                decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(35),
-                      bottomRight: Radius.circular(35),
-                    ),
-                    gradient:
-                        LinearGradient(colors: [Colors.indigo, Colors.blue])),
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(25, 40, 0, 0),
-                  child: Column(children: [
-                    Row(
-                      children: [
-                        SizedBox(
-                          height: 60,
-                          width: MediaQuery.of(context).size.width * .5,
-                          // color: Colors.red,
-                          child: const ListTile(
-                            title: Text(
-                              "Hi Yogendra,",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 25),
-                            ),
-                            subtitle: Text(
-                              "Let's Start Learning",
-                              style:
-                                  TextStyle(color: Colors.white, height: .45),
-                            ),
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const MyProfile()));
-                          },
-                          child: Container(
-                            margin: const EdgeInsets.only(left: 60),
-                            height: 40,
-                            width: MediaQuery.of(context).size.width * .10,
-                            color: Colors.white,
-                            child: const Icon(
-                              Icons.verified_user,
-                              color: Colors.indigo,
-                            ),
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: () {},
-                          child: Container(
-                            margin: const EdgeInsets.only(left: 12),
-                            height: 40,
-                            width: MediaQuery.of(context).size.width * .10,
-                            color: Colors.white,
-                            child: const Icon(
-                              Icons.logout_outlined,
-                              color: Colors.indigo,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(5, 10, 0, 0),
-                      child: Row(
+        // extendBodyBehindAppBar: true,
+        // appBar: AppBar(
+        //   // backgroundColor: const Color.fromARGB(255, 70, 74, 130),
+        //   backgroundColor: Colors.transparent,
+        //   elevation: 0,
+        // ),
+        body: SingleChildScrollView(
+          child: Column(children: [
+            Stack(
+              children: [
+                Container(
+                  height: 200,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(35),
+                        bottomRight: Radius.circular(35),
+                      ),
+                      gradient:
+                          LinearGradient(colors: [Colors.indigo, Colors.blue])),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(25, 40, 0, 0),
+                    child: Column(children: [
+                      Row(
                         children: [
                           SizedBox(
-                            height: 50,
-                            width: MediaQuery.of(context).size.width * .7,
-                            // color: Colors.yellow,
-                            child: TextField(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const MysearchQ()));
-                              },
-                              decoration: const InputDecoration(
-                                  filled: true,
-                                  fillColor: Colors.white,
-                                  prefixIcon: Icon(
-                                    Icons.search,
-                                    color: Colors.indigo,
-                                  ),
-                                  border: InputBorder.none,
-                                  hintText: "Search Questions"),
+                            height: 60,
+                            width: MediaQuery.of(context).size.width * .5,
+                            // color: Colors.red,
+                            child: const ListTile(
+                              title: Text(
+                                "Hi Yogendra,",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 25),
+                              ),
+                              subtitle: Text(
+                                "Let's Start Learning",
+                                style:
+                                    TextStyle(color: Colors.white, height: .45),
+                              ),
                             ),
                           ),
                           GestureDetector(
@@ -133,59 +75,121 @@ class _MyHomeState extends State<MyHome> {
                                       builder: (context) => const MyProfile()));
                             },
                             child: Container(
-                              // padding: const EdgeInsets.only(left: 3),
-                              margin: const EdgeInsets.only(left: 10),
-                              height: 50,
-                              width: MediaQuery.of(context).size.width * .14,
+                              margin: const EdgeInsets.only(left: 60),
+                              height: 40,
+                              width: MediaQuery.of(context).size.width * .10,
                               color: Colors.white,
-                              child: const Center(
-                                  child: Icon(
-                                Icons.menu_book,
+                              child: const Icon(
+                                Icons.verified_user,
                                 color: Colors.indigo,
-                              )),
+                              ),
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {},
+                            child: Container(
+                              margin: const EdgeInsets.only(left: 12),
+                              height: 40,
+                              width: MediaQuery.of(context).size.width * .10,
+                              color: Colors.white,
+                              child: const Icon(
+                                Icons.logout_outlined,
+                                color: Colors.indigo,
+                              ),
                             ),
                           ),
                         ],
                       ),
-                    )
-                  ]),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(5, 10, 0, 0),
+                        child: Row(
+                          children: [
+                            SizedBox(
+                              height: 50,
+                              width: MediaQuery.of(context).size.width * .7,
+                              // color: Colors.yellow,
+                              child: TextField(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const MysearchQ()));
+                                },
+                                decoration: const InputDecoration(
+                                    filled: true,
+                                    fillColor: Colors.white,
+                                    prefixIcon: Icon(
+                                      Icons.search,
+                                      color: Colors.indigo,
+                                    ),
+                                    border: InputBorder.none,
+                                    hintText: "Search Questions"),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const MyProfile()));
+                              },
+                              child: Container(
+                                // padding: const EdgeInsets.only(left: 3),
+                                margin: const EdgeInsets.only(left: 10),
+                                height: 50,
+                                width: MediaQuery.of(context).size.width * .14,
+                                color: Colors.white,
+                                child: const Center(
+                                    child: Icon(
+                                  Icons.menu_book,
+                                  color: Colors.indigo,
+                                )),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ]),
+                  ),
                 ),
-              ),
-            ],
-          ),
-          //carousel slider are here😁
-          const SizedBox(
-            height: 10,
-          ),
-          const MyCarousel(),
+              ],
+            ),
+            //carousel slider are here😁
+            const SizedBox(
+              height: 10,
+            ),
+            const MyCarousel(),
 
-          //gird are here😊
-          const Padding(padding: EdgeInsets.all(25), child: MyGridView()),
-          const ListTile(
-            title: Text("Class :"),
-          ),
-          const ListTile(
-            title: Text("Class :"),
-          ),
-          const ListTile(
-            title: Text("Class :"),
-          ),
-          const ListTile(
-            title: Text("Class :"),
-          ),
-          const ListTile(
-            title: Text("Class :"),
-          ),
-          const ListTile(
-            title: Text("Class :"),
-          ),
-          const ListTile(
-            title: Text("Class :"),
-          ),
-        ]),
-      ),
-      floatingActionButton: const MyFloatingActionButton(),
-    );
+            //gird are here😊
+            const Padding(padding: EdgeInsets.all(25), child: MyGridView()),
+            const ListTile(
+              title: Text("Class :"),
+            ),
+            const ListTile(
+              title: Text("Class :"),
+            ),
+            const ListTile(
+              title: Text("Class :"),
+            ),
+            const ListTile(
+              title: Text("Class :"),
+            ),
+            const ListTile(
+              title: Text("Class :"),
+            ),
+            const ListTile(
+              title: Text("Class :"),
+            ),
+            const ListTile(
+              title: Text("Class :"),
+            ),
+          ]),
+        ),
+        floatingActionButton: const MyFloatingActionButton(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        bottomNavigationBar: const MybottomNavigationBar());
   }
 }
 

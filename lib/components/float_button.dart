@@ -7,6 +7,7 @@ class MyFloatingActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
+        shape: const CircleBorder(),
         foregroundColor: Colors.white,
         backgroundColor: Colors.indigo,
         focusColor: Colors.indigo,
