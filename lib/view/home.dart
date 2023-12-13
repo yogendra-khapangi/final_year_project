@@ -3,6 +3,7 @@ import 'package:mymath/components/float_button.dart';
 import 'package:mymath/components/grid_button.dart';
 import 'package:mymath/components/mycrousel.dart';
 import 'package:mymath/view/profile_page.dart';
+import 'package:mymath/view/search_question_page.dart';
 
 class MyHome extends StatefulWidget {
   const MyHome({super.key});
@@ -105,8 +106,15 @@ class _MyHomeState extends State<MyHome> {
                             height: 50,
                             width: MediaQuery.of(context).size.width * .7,
                             // color: Colors.yellow,
-                            child: const TextField(
-                              decoration: InputDecoration(
+                            child: TextField(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const MysearchQ()));
+                              },
+                              decoration: const InputDecoration(
                                   filled: true,
                                   fillColor: Colors.white,
                                   prefixIcon: Icon(

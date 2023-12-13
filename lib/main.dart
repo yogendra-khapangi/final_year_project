@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         home: const MyHome()
         // home: const MyProfile(),
         // home: const MyTabPage(),
+        // home: const MysearchQ(),
         );
   }
 }
