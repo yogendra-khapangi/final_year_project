@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mymath/view/Tapview_page.dart';
-import 'package:mymath/view/profile_page.dart';
 
 class MyGridView extends StatelessWidget {
   const MyGridView({super.key});
@@ -24,24 +23,24 @@ class MyGridView extends StatelessWidget {
               height: 30,
               width: 30,
               color: const Color.fromARGB(255, 234, 235, 237),
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
+                  SizedBox(
                     // color: Colors.red,
                     height: 45,
                     width: 45,
-                    child: const Icon(
+                    child: Icon(
                       Icons.all_inbox,
                       color: Colors.indigo,
                       size: 45,
                     ),
                   ),
-                  const Text("Class",
+                  Text("Class",
                       style:
                           TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
-                  const Text("five",
+                  Text("five",
                       style: TextStyle(
                         height: .5,
                         fontSize: 10,
@@ -58,12 +57,12 @@ class MyGridView extends StatelessWidget {
           Container(
             height: 30,
             width: 30,
-            color: Color.fromARGB(255, 107, 112, 140),
+            color: const Color.fromARGB(255, 107, 112, 140),
           ),
           Container(
             height: 30,
             width: 30,
-            color: Color.fromARGB(255, 140, 156, 249),
+            color: const Color.fromARGB(255, 140, 156, 249),
           ),
           Container(
             height: 30,

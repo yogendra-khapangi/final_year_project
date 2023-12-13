@@ -47,7 +47,7 @@ class _MyHomeState extends State<MyHome> {
                   child: Column(children: [
                     Row(
                       children: [
-                        Container(
+                        SizedBox(
                           height: 60,
                           width: MediaQuery.of(context).size.width * .5,
                           // color: Colors.red,
@@ -101,7 +101,7 @@ class _MyHomeState extends State<MyHome> {
                       padding: const EdgeInsets.fromLTRB(5, 10, 0, 0),
                       child: Row(
                         children: [
-                          Container(
+                          SizedBox(
                             height: 50,
                             width: MediaQuery.of(context).size.width * .7,
                             // color: Colors.yellow,
