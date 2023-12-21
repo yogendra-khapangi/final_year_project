@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mymath/view/Tapview_page.dart';
+import 'package:mymath/view/chapterList_page.dart';
 
 class MyGridView extends StatelessWidget {
   const MyGridView({super.key});
@@ -16,8 +17,10 @@ class MyGridView extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const MyTabPage()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const MychapterPage()));
             },
             child: Container(
               height: 30,
@@ -38,12 +41,15 @@ class MyGridView extends StatelessWidget {
                     ),
                   ),
                   Text("Class",
-                      style:
-                          TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
-                  Text("five",
                       style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
                         height: .5,
-                        fontSize: 10,
+                      )),
+                  Text("five(5)",
+                      style: TextStyle(
+                        // height: .5,
+                        fontSize: 11,
                       )),
                 ],
               ),

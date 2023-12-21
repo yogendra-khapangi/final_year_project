@@ -1,9 +1,10 @@
-import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:mymath/components/bottomNavigationBar.dart';
+import 'package:mymath/components/chapter_list.dart';
 import 'package:mymath/components/float_button.dart';
 import 'package:mymath/components/grid_button.dart';
 import 'package:mymath/components/mycrousel.dart';
+import 'package:mymath/view/chapterList_page.dart';
 import 'package:mymath/view/profile_page.dart';
 import 'package:mymath/view/search_question_page.dart';
 
@@ -164,10 +165,44 @@ class _MyHomeState extends State<MyHome> {
 
             //gird are here😊
             const Padding(padding: EdgeInsets.all(25), child: MyGridView()),
+            //text
+            ListTile(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MychapterPage()));
+              },
+              trailing: const Icon(
+                Icons.menu_book,
+                color: Colors.indigo,
+              ),
+              contentPadding: const EdgeInsets.only(left: 25, right: 25),
+              textColor: Colors.indigo,
+              // tileColor: Colors.indigo,
+              title: const Text(
+                "Yours Chapters",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+
+            //list here❤️❤️
+
+            const Padding(
+                padding: EdgeInsets.only(left: 25, right: 25),
+                child: MychapterList()),
+            const SizedBox(
+              height: 5,
+            ),
+
+            ///other😱
             const ListTile(
+              tileColor: Colors.red,
+              shape: BeveledRectangleBorder(),
               title: Text("Class :"),
             ),
             const ListTile(
+              tileColor: Colors.red,
               title: Text("Class :"),
             ),
             const ListTile(
@@ -192,9 +227,6 @@ class _MyHomeState extends State<MyHome> {
         bottomNavigationBar: const MybottomNavigationBar());
   }
 }
-
-
-
 
 //       body: SingleChildScrollView(
 //         child: Column(
@@ -271,7 +303,7 @@ class _MyHomeState extends State<MyHome> {
 //           colors: [Colors.blue, Colors.indigo],
 //         ),
 //       ),
-//      
+//
 //     )));
 //   }
 // }
