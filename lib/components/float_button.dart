@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mymath/view/imagetotext(AI%20part).dart';
 import 'package:mymath/view/profile_page.dart';
 
 class MyFloatingActionButton extends StatelessWidget {
@@ -14,7 +15,7 @@ class MyFloatingActionButton extends StatelessWidget {
         child: const Icon(Icons.add),
         onPressed: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const MyProfile()));
+              MaterialPageRoute(builder: (context) => const MyImageToText()));
         });
   }
 }

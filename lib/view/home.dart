@@ -196,15 +196,7 @@ class _MyHomeState extends State<MyHome> {
             ),
 
             ///other😱
-            const ListTile(
-              tileColor: Colors.red,
-              shape: BeveledRectangleBorder(),
-              title: Text("Class :"),
-            ),
-            const ListTile(
-              tileColor: Colors.red,
-              title: Text("Class :"),
-            ),
+
             const ListTile(
               title: Text("Class :"),
             ),
