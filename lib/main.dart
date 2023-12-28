@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mymath/view/home.dart';
+import 'package:mymath/view/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,18 +17,19 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-            // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-            // useMaterial3: true,
-            primarySwatch: Colors.blue),
-        home: const MyHome()
-        // home: const MyProfile(),
-        // home: const MyTabPage(),
-        // home: const MysearchQ(),
-        // home: const MyPdf(),
-        );
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+          // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          // useMaterial3: true,
+          primarySwatch: Colors.blue),
+      // home: const MyHome()
+      // home: const MyProfile(),
+      // home: const MyTabPage(),
+      // home: const MysearchQ(),
+      // home: const MyPdf(),
+      home: const MysplashPage(),
+    );
   }
 }
       
