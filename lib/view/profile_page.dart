@@ -1,13 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:jwt_decode/jwt_decode.dart';
 
 class MyProfile extends StatefulWidget {
-  const MyProfile({super.key});
+  final String token;
+  const MyProfile({super.key, required this.token});
 
   @override
   State<MyProfile> createState() => _MyProfileState();
 }
 
 class _MyProfileState extends State<MyProfile> {
+  String? username;
+  String? email;
+
+  @override
+  void initState() {
+    super.initState();
+
+    print(widget.token);
+
+    try {
+      Map<String, dynamic>? tokenPayload = Jwt.parseJwt(widget.token);
+
+      if (tokenPayload != null) {
+        print("Decoded Token Payload: $tokenPayload");
+        username = tokenPayload['username'];
+        email = tokenPayload['email'];
+        print(username);
+      } else {
+        print("Failed to decode token");
+      }
+    } catch (e) {
+      print("Error decoding token: $e");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,39 +44,39 @@ class _MyProfileState extends State<MyProfile> {
         foregroundColor: Colors.white,
         title: const Text("PROFILE"),
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
           child: Column(
         children: [
           ListTile(
-            leading: CircleAvatar(
+            leading: const CircleAvatar(
               child: Center(
                 child: Text("Y"),
               ),
             ),
-            title: Text("Yogendra khapangi"),
-            subtitle: Text("@yogendramagar"),
+            title: Text("$username"),
+            subtitle: Text("@$username"),
           ),
           // SizedBox(
           //   height: 20,
           // ),
-          ListTile(
+          const ListTile(
             leading: Icon(Icons.design_services),
             title: Text("Bachelor"),
           ),
           ListTile(
-            leading: Icon(Icons.email_outlined),
-            title: Text("youyogendra@gmail.com"),
+            leading: const Icon(Icons.email_outlined),
+            title: Text("$email"),
           ),
-          Divider(
+          const Divider(
             thickness: 2.0,
             height: 2,
             color: Colors.indigo,
           ),
 
-          SizedBox(
+          const SizedBox(
             height: 0,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(20.0),
             child: Card(
               child: Column(

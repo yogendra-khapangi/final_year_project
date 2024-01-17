@@ -9,7 +9,6 @@ import 'package:mymath/view/chapterList_page.dart';
 import 'package:mymath/view/profile_page.dart';
 import 'package:mymath/view/search_question_page.dart';
 import 'package:jwt_decode/jwt_decode.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class MyHome extends StatefulWidget {
   final String token;
@@ -100,7 +99,9 @@ class _MyHomeState extends State<MyHome> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const MyProfile()));
+                                      builder: (context) => MyProfile(
+                                            token: widget.token,
+                                          )));
                             },
                             child: Container(
                               margin: const EdgeInsets.only(left: 60),
@@ -160,8 +161,9 @@ class _MyHomeState extends State<MyHome> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) =>
-                                            const MyProfile()));
+                                        builder: (context) => MyProfile(
+                                              token: widget.token,
+                                            )));
                               },
                               child: Container(
                                 // padding: const EdgeInsets.only(left: 3),
