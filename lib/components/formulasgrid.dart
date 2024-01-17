@@ -1,36 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:mymath/view/Tapview_page.dart';
-import 'package:mymath/view/chapterList_page.dart';
 
-class MyGridView extends StatelessWidget {
-  MyGridView({super.key});
+import 'package:mymath/view/chapterList_page.dart';
+import 'package:mymath/view/mathFormulas.dart';
+
+class Myformulasgird extends StatelessWidget {
+  Myformulasgird({super.key});
   final List<String> gridContent = [
-    'Five(5)',
-    'Six(6)',
-    'Seven(7)',
-    'Eight(8)',
-    'Nine(9)',
-    'Ten(10)',
-    'Eleven(11)',
-    'Twelve(12)',
+    'Formulas',
+    "UnitConver",
+    "Coding",
+
     // Add more items as needed
   ];
   static const gridicon = <IconData>[
-    Icons.school,
-    Icons.palette,
-    Icons.quiz,
-    Icons.keyboard,
-    Icons.computer,
-    Icons.radio,
-    Icons.explore,
-    Icons.auto_awesome_motion,
+    Icons.bookmark_add,
+    Icons.bookmark_add,
+    Icons.bookmark_add,
   ];
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 4, // Number of columns in the grid
+        crossAxisCount: 3, // Number of columns in the grid
         crossAxisSpacing: 8, // Spacing between columns
         mainAxisSpacing: 8, // Spacing between rows
       ),
@@ -41,13 +33,18 @@ class MyGridView extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         return GestureDetector(
           onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const MychapterPage()));
+            print(gridContent[index]);
+            if (gridContent[index] == "Formulas") {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const MyFormulas()));
+            } else {
+              print("nothing");
+            }
           },
           child: Container(
             height: 30,
             width: 30,
-            color: const Color.fromARGB(255, 234, 235, 237),
+            color: Colors.indigo,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -58,24 +55,19 @@ class MyGridView extends StatelessWidget {
                   width: 40,
                   child: Icon(
                     gridicon[index],
-                    color: Colors.indigo,
+                    color: Colors.white,
                     size: 35,
                   ),
                 ),
                 const SizedBox(
                   height: 5,
                 ),
-                const Text("Class",
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
-                      height: .5,
-                    )),
                 Text(gridContent[index],
                     style: const TextStyle(
-                      // height: .5,
-                      fontSize: 11,
-                    )),
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                        height: .5,
+                        color: Colors.white)),
               ],
             ),
           ),

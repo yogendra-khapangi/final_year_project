@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class MyTabPage extends StatefulWidget {
   const MyTabPage({super.key});
@@ -8,6 +9,31 @@ class MyTabPage extends StatefulWidget {
 }
 
 class _MyTabPageState extends State<MyTabPage> {
+  final GlobalKey<SfPdfViewerState> _pdfViewerKey = GlobalKey();
+  // final String pdfPath = 'assets\\images\\hero.pdf';
+
+//❤️❤️
+//  late PdfViewerController _pdfViewerController;
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     _pdfViewerController = PdfViewerController();
+//     _preloadPDF();
+//   }
+
+//   Future<void> _preloadPDF() async {
+//     final PdfDocument document = PdfDocument(file: widget.pdfPath);
+//     await document.loadDocument();
+//     _pdfViewerController.loadDocument(document);
+//   }
+
+//   @override
+//   void dispose() {
+//     _pdfViewerController.dispose();
+//     super.dispose();
+//   }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -60,15 +86,22 @@ class _MyTabPageState extends State<MyTabPage> {
             ),
           ),
         ),
-        body: const TabBarView(
+        body: TabBarView(
           children: [
-            Icon(Icons.directions_car),
-            Icon(Icons.directions_transit),
-            Icon(Icons.directions_bike),
-            Icon(Icons.directions_bike),
-            Icon(Icons.directions_bike),
-            Icon(Icons.directions_bike),
-            Icon(Icons.directions_bike),
+            Container(
+              height: 300,
+              width: 300,
+              child: SfPdfViewer.asset(
+                'assets/images/hero.pdf',
+                key: _pdfViewerKey,
+              ),
+            ),
+            const Icon(Icons.directions_transit),
+            const Icon(Icons.directions_bike),
+            const Icon(Icons.directions_bike),
+            const Icon(Icons.directions_bike),
+            const Icon(Icons.directions_bike),
+            const Icon(Icons.directions_bike),
           ],
         ),
       ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mymath/components/bottomNavigationBar.dart';
 import 'package:mymath/components/chapter_list.dart';
 import 'package:mymath/components/float_button.dart';
+import 'package:mymath/components/formulasgrid.dart';
 import 'package:mymath/components/grid_button.dart';
 import 'package:mymath/components/mycrousel.dart';
 import 'package:mymath/view/chapterList_page.dart';
@@ -164,7 +165,7 @@ class _MyHomeState extends State<MyHome> {
             const MyCarousel(),
 
             //gird are here😊
-            const Padding(padding: EdgeInsets.all(25), child: MyGridView()),
+            Padding(padding: const EdgeInsets.all(25), child: MyGridView()),
             //text
             ListTile(
               onTap: () {
@@ -195,23 +196,26 @@ class _MyHomeState extends State<MyHome> {
               height: 5,
             ),
 
-            ///other😱
+            const Divider(
+              color: Colors.indigo,
+              thickness: 3,
+            ),
 
-            const ListTile(
-              title: Text("Class :"),
+            ///other😱
+            const SizedBox(
+              height: 20,
             ),
-            const ListTile(
-              title: Text("Class :"),
+
+            ///
+            Padding(
+              padding: const EdgeInsets.only(left: 25, right: 25),
+              child: Myformulasgird(),
             ),
-            const ListTile(
-              title: Text("Class :"),
+            const SizedBox(
+              height: 40,
             ),
-            const ListTile(
-              title: Text("Class :"),
-            ),
-            const ListTile(
-              title: Text("Class :"),
-            ),
+
+            /// @override
           ]),
         ),
         floatingActionButton: const MyFloatingActionButton(),

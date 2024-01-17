@@ -40,6 +40,7 @@ dependencies:
   animated_bottom_navigation_bar: ^1.3.0
   image_picker: ^1.0.5
   google_ml_kit: ^0.16.3
+  syncfusion_flutter_pdfviewer: ^24.1.43
   
 
 dev_dependencies:
@@ -67,6 +68,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/images/hero.pdf
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
