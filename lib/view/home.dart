@@ -8,15 +8,41 @@ import 'package:mymath/components/mycrousel.dart';
 import 'package:mymath/view/chapterList_page.dart';
 import 'package:mymath/view/profile_page.dart';
 import 'package:mymath/view/search_question_page.dart';
+import 'package:jwt_decode/jwt_decode.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MyHome extends StatefulWidget {
-  const MyHome({super.key});
+  final String token;
+  const MyHome({super.key, required this.token});
 
   @override
   State<MyHome> createState() => _MyHomeState();
 }
 
 class _MyHomeState extends State<MyHome> {
+  String? username;
+
+  @override
+  void initState() {
+    super.initState();
+
+    print(widget.token);
+
+    try {
+      Map<String, dynamic>? tokenPayload = Jwt.parseJwt(widget.token);
+
+      if (tokenPayload != null) {
+        print("Decoded Token Payload: $tokenPayload");
+        username = tokenPayload['username'];
+        print(username);
+      } else {
+        print("Failed to decode token");
+      }
+    } catch (e) {
+      print("Error decoding token: $e");
+    }
+  }
+
   int selectedIndex = 0;
   void onItemTapped(int index) {
     setState(() {
@@ -56,13 +82,13 @@ class _MyHomeState extends State<MyHome> {
                             height: 60,
                             width: MediaQuery.of(context).size.width * .5,
                             // color: Colors.red,
-                            child: const ListTile(
+                            child: ListTile(
                               title: Text(
-                                "Hi Yogendra,",
-                                style: TextStyle(
+                                "Hi $username,",
+                                style: const TextStyle(
                                     color: Colors.white, fontSize: 25),
                               ),
-                              subtitle: Text(
+                              subtitle: const Text(
                                 "Let's Start Learning",
                                 style:
                                     TextStyle(color: Colors.white, height: .45),

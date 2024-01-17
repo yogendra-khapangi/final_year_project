@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mymath/view/home.dart';
+import 'package:mymath/view/login_page.dart';
+import 'package:mymath/view/signup_page.dart';
 
 class MysplashPage extends StatefulWidget {
   const MysplashPage({super.key});
@@ -17,7 +19,7 @@ class _MysplashPageState extends State<MysplashPage>
     // SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const MyHome()));
+          context, MaterialPageRoute(builder: (context) => const LoginPage()));
     });
   }
 

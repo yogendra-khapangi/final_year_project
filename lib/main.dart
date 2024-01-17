@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mymath/view/home.dart';
 import 'package:mymath/view/mathFormulas.dart';
+import 'package:mymath/view/signup_page.dart';
 import 'package:mymath/view/splash_screen.dart';
 
 void main() {
@@ -31,6 +32,7 @@ class _MyAppState extends State<MyApp> {
       // home: const MyPdf(),
       home: const MysplashPage(),
       // home: const MyFormulas(),
+      // home: SignupPage(),
     );
   }
 }

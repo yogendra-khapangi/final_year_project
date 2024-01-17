@@ -92,7 +92,7 @@ class _MyTabPageState extends State<MyTabPage> {
               height: 300,
               width: 300,
               child: SfPdfViewer.asset(
-                'assets/images/hero.pdf',
+                'assets/images/12.pdf',
                 key: _pdfViewerKey,
               ),
             ),
