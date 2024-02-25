@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mymath/view/page_not_found.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class MyTabPage extends StatefulWidget {
@@ -50,7 +51,7 @@ class _MyTabPageState extends State<MyTabPage> {
             unselectedLabelColor: Colors.white,
             tabs: [
               Tab(
-                text: "SYLLABUS",
+                text: "SYLLEBUS",
               ),
               Tab(
                 text: "CHAPTERS",
@@ -96,7 +97,7 @@ class _MyTabPageState extends State<MyTabPage> {
                 key: _pdfViewerKey,
               ),
             ),
-            const Icon(Icons.directions_transit),
+            const PageNotFound(),
             const Icon(Icons.directions_bike),
             const Icon(Icons.directions_bike),
             const Icon(Icons.directions_bike),

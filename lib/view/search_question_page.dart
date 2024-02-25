@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mymath/view/answer.dart';
 
 class MysearchQ extends StatefulWidget {
   const MysearchQ({super.key});
@@ -58,10 +59,18 @@ class _MysearchQState extends State<MysearchQ> {
                 padding: const EdgeInsets.all(8),
                 itemCount: 50,
                 itemBuilder: (BuildContext context, int index) {
-                  return const ListTile(
-                    leading: CircleAvatar(),
-                    title: Text("hello world"),
-                    subtitle: Text("math"),
+                  return ListTile(
+                    onTap: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Answer()));
+                    },
+                    leading: CircleAvatar(
+                      child: Text("${index + 1}"),
+                    ),
+                    title: const Text("hello world"),
+                    subtitle: const Text("math"),
                   );
                 })
           ],
