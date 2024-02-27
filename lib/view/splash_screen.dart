@@ -17,7 +17,7 @@ class _MysplashPageState extends State<MysplashPage>
   void initState() {
     super.initState();
     // SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 5), () {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => const LoginPage()));
     });

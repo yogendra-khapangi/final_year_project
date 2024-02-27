@@ -23,6 +23,7 @@ class ShowGrid extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Feature"),
         backgroundColor: Colors.indigo,
+        foregroundColor: Colors.white,
       ),
       body: Padding(
         padding: const EdgeInsets.all(25.0),

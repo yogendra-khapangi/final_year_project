@@ -14,6 +14,12 @@ class _MysearchQState extends State<MysearchQ> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.indigo,
+        foregroundColor: Colors.white,
+        onPressed: () {},
+        child: const Icon(Icons.question_mark),
+      ),
       appBar: AppBar(
         title: const Text("Questions"),
         backgroundColor: Colors.indigo,
@@ -59,18 +65,20 @@ class _MysearchQState extends State<MysearchQ> {
                 padding: const EdgeInsets.all(8),
                 itemCount: 50,
                 itemBuilder: (BuildContext context, int index) {
-                  return ListTile(
-                    onTap: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Answer()));
-                    },
-                    leading: CircleAvatar(
-                      child: Text("${index + 1}"),
+                  return Card(
+                    child: ListTile(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Answer()));
+                      },
+                      leading: CircleAvatar(
+                        child: Text("${index + 1}"),
+                      ),
+                      title: const Text("hello world"),
+                      subtitle: const Text("math"),
                     ),
-                    title: const Text("hello world"),
-                    subtitle: const Text("math"),
                   );
                 })
           ],
