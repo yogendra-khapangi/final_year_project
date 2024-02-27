@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mymath/view/addQueston.dart';
 import 'package:mymath/view/answer.dart';
 
 class MysearchQ extends StatefulWidget {
@@ -17,7 +18,10 @@ class _MysearchQState extends State<MysearchQ> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.indigo,
         foregroundColor: Colors.white,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => AddQs()));
+        },
         child: const Icon(Icons.question_mark),
       ),
       appBar: AppBar(
